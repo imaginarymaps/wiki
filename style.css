@@ -1,0 +1,135 @@
+:root {
+    /* Background */
+    --bBackground: hsl(200, 10%, 90%);
+    --bText: hsl(0, 0%, 40%);
+
+    /* Main article */
+    --mBackground: hsl(200, 10%, 96%);
+    ;
+    --mText: black;
+    --mBorder: hsl(0, 0%, 50%);
+
+    /* Tables */
+    --tBase: hsl(200, 15%, 60%);
+    --tHead: hsl(200, 25%, 90%);
+    --tBody: hsl(200, 20%, 94%);
+}
+
+:root[theme="dark"] {
+    /* Background */
+    --bBackground: hsl(200, 5%, 15%);
+    --bText: hsl(0, 0%, 60%);
+
+    /* Main article */
+    --mBackground: hsl(200, 15%, 10%);
+    --mText: white;
+    --mBorder: hsl(0, 0%, 30%);
+
+    /* Tables */
+    --tBase: hsl(200, 15%, 30%);
+    --tHead: hsl(200, 15%, 20%);
+    --tBody: hsl(200, 10%, 15%);
+}
+
+body {
+    font-family: sans-serif;
+    background: var(--bBackground);
+    color: var(--bText);
+}
+
+main {
+    position: absolute;
+    top: 20px;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    width: 50vw;
+    background: var(--mBackground);
+    color: var(--mText);
+    border: 1px solid var(--mBorder);
+    padding: 10px;
+}
+
+@media (max-width: 800px) {
+    main {
+        width: calc(100vw - 60px);
+    }
+}
+
+
+/* Text */
+
+h1,
+h2 {
+    font-family: serif;
+    border-bottom: 1px solid var(--mBorder);
+    overflow: hidden;
+    font-size: 20pt;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 30pt;
+    margin-top: 0px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: royalblue;
+}
+
+
+/* Split */
+
+split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Table */
+
+table {
+    background: var(--tBase);
+    border-spacing: 1px;
+}
+
+th {
+    background: var(--tHead);
+    padding: 5px;
+}
+
+td {
+    background: var(--tBody);
+    padding: 5px;
+}
+
+
+/* Infobox */
+
+infobox {
+    float: right;
+    width: 25%;
+    margin: 10px;
+    margin-right: 0px;
+    background: var(--tBody);
+    border: 1px solid var(--tBase);
+    padding: 5px;
+}
+
+infobox h1,
+infobox h2 {
+    font-size: 16pt;
+    margin: 5px;
+    text-align: center;
+    font-family: sans-serif;
+    border: none;
+}
+
+infobox h2 {
+    font-size: 12pt;
+}
+
+infobox img {
+    width: 100%;
+}
